@@ -3,6 +3,9 @@ const asyncHandler = require('express-async-handler');
 const Tracker = require('../models/trackerModel')
 
 const getTracker = asyncHandler(async (req, res) => {
+
+	console.log(req.headers)
+
 	const tracker = await Tracker.find()
 	res.status(200).json({
 		data: tracker
